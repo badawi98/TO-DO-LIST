@@ -17,10 +17,13 @@ for (i = 0; i < close.length; i++) {
   }
 }
 
-window.onunload = function() {
-  localStorage.setItem("badawi", "hello"); // save localStorage to noselection state
-}
-
+window.addEventListener("unload", function(event) { //when the window is closed
+	localStorage.setItem("pickColor", "meep"); // save selected color to localStorage
+	let sending = browser.runtime.sendMessage({
+		message: "color set done"
+	});
+	console.log("message sent");
+	});
 
 
 
@@ -83,7 +86,7 @@ function addItem(list, input) {
 }
 
 function deleteAll(){
-  document.getElementById("list").innerHTML = "";
+  document.getElementById("sortable").innerHTML = "";
 
 }
 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );
+  </script>
+</head>
+
+<body>
+  <h1 style="text-align: center;">To-Do List</h1>
+  <div id="add">
+    <nav class="navbar">
+        <form class="form-inline" onsubmit="return addItem('sortable', this.inputItem)">
+          <input  size = "60" id = "inputItem" class="form-control mr-sm-4" type="search" placeholder="Enter the task" aria-label="Search" 
+          onfocus="this.value=''" onselect="this.value=''">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add To Do</button>
+        </form>
+      </nav>
+</div>
+
+  <ul id="sortable" style="list-style: none;">
+    <hr>
+  </ul>
+  <center>
+    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" onclick="deleteAll()">Delete All Tasks</button>
+  </center>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

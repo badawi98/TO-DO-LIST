@@ -1,0 +1,23 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    vertical-align: middle;
+}
+.fa-trash:before{
+    color : red;
+}
+#task1label{
+    text-decoration-line: none;
+}
+.containers {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+

@@ -17,13 +17,7 @@ for (i = 0; i < close.length; i++) {
   }
 }
 
-window.addEventListener("unload", function(event) { //when the window is closed
-	localStorage.setItem("pickColor", "meep"); // save selected color to localStorage
-	let sending = browser.runtime.sendMessage({
-		message: "color set done"
-	});
-	console.log("message sent");
-	});
+
 
 
 
@@ -31,14 +25,13 @@ window.addEventListener("unload", function(event) { //when the window is closed
 // list is the ID of UL
 // input is the ID of input
 function addItem(list, input) {
-  var inputItem = this.inputItem;
-  var list = document.getElementById(list);
-  var listItem = document.createElement("li");
-  listItem.setAttribute("draggable", "true");
-  listItem.setAttribute("class", "box");
+var inputItem = this.inputItem;
+var list = document.getElementById(list);
+var listItem = document.createElement("li");
+listItem.setAttribute("draggable", "true");
+listItem.setAttribute("class", "box");
 
 
-  // create an li object to add it the ul
   
   // Configure the delete button
   var deleteButton = document.createElement("span");
@@ -80,8 +73,6 @@ function addItem(list, input) {
   list.appendChild(listItem);
   inputItem.focus();
   inputItem.select();
-  var x = document.getElementsByTagName('li');
-  localStorage.setItem("comp", x); // save localStorage to noselection state
   return false;
 }
 
@@ -90,19 +81,3 @@ function deleteAll(){
 
 }
 
-/*function addTask() {
-    var item = "<div class=\"container\">"
-        +"<div class=\"row\">"
-            +"<div class=\"col-10\">"
-                +"<div class=\"form-check\">"
-                    +"<input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\">"
-                    +"<label class=\"form-check-label\" for=\"exampleCheck1\">Check me out</label>"
-                +"</div>"     
-            +"</div>"
-            +"<div class=\"col-2\">"
-                +"<i class=\"fa fa-trash fa-lg\"></i>"
-            +"</div>"
-        +"</div>"
-    +"</div>";
-    document.getElementById('tasks').append(item);
-}*/

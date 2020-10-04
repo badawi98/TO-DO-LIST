@@ -18,7 +18,7 @@
   </script>
 </head>
 
-<body>
+<body onbeforeunload="saveTolocalStorage()">
   <h1 style="text-align: center;">To-Do List</h1>
   <div id="add">
     <nav class="navbar">
@@ -36,7 +36,6 @@
   <center>
     <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" onclick="deleteAll()">Delete All Tasks</button>
   </center>
-
   <script src="index.js"></script>
 </body>
 
